@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+joblib = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+django-dash = "*"
+sklearn = "*"
+django-plotly-dash = "*"
+pandas = "*"
+pip = "*"
+ipykernel = "*"
+shap = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
