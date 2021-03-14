@@ -11,6 +11,8 @@ openpyxl = "*"
 fastparquet = "*"
 python-snappy = "*"
 pyarrow = "*"
+nltk = "*"
+sklearn = "*"
 
 [dev-packages]
 
