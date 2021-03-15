@@ -13,6 +13,7 @@ python-snappy = "*"
 pyarrow = "*"
 nltk = "*"
 sklearn = "*"
+spacy = "*"
 
 [dev-packages]
 
