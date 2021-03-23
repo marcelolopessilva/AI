@@ -688,7 +688,7 @@ Em Docs/DataReport pode ser encontrado o relatório de dados do projeto [Relató
 
 ## 3 - Análise Exploratória de Dados
 
-Em Code/Analysis existe o notebook [DataAnalys/isExploration](../Code/Analysis/DataAnalysisExploration.ipynb). Neste notebook encontra-se a análise exploratória de dados responsável pelo melhor entendimento das informações do projeto.
+Em Code/Analysis existe o notebook [DataAnalysisExploration](../Code/Analysis/DataAnalysisExploration.ipynb). Neste notebook encontra-se a análise exploratória de dados responsável pelo melhor entendimento das informações do projeto.
 
 ## 4 - Preparação de Dados
 

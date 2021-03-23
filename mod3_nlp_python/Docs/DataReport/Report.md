@@ -8,7 +8,7 @@ Esse relatório das bases de dados do projeto. A estrutura do arquivo mostra que
 
 |Nome Dataset|Origem|Destino|Script|
 | :---:| ---: | ---: | ---: |
-mpo_fragmentos.xlsx|ONS|Pasta Data/Raw|[DataAnalysisExplorations.ipynb](../../Code/Analysis/DataAnalysisExplorations.ipynb)|
+mpo_fragmentos.xlsx|ONS|Pasta Data/Raw|[DataAnalysisExplorations.ipynb](../../Code/Analysis/DataAnalysisExploration.ipynb)|
 
 </br>
 
