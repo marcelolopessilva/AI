@@ -688,12 +688,12 @@ Em Docs/DataReport pode ser encontrado o relatório de dados do projeto [Relató
 
 ## 3 - Análise Exploratória de Dados
 
-Em Code/Analysis existe o notebook [DataAnalysisExploration](./Code/Analysis/DataAnalysisExploration.ipynb). Neste notebook encontra-se a análise exploratória de dados responsável pelo melhor entendimento das informações do projeto.
+Em Code/Analysis existe o notebook [DataAnalys/isExploration](../Code/Analysis/DataAnalysisExploration.ipynb). Neste notebook encontra-se a análise exploratória de dados responsável pelo melhor entendimento das informações do projeto.
 
 ## 4 - Preparação de Dados
 
-Em Code/DataPrep existe o notebook [DataPreparation](./Code/Analysis/DataPreparation.ipynb). Este notebook é reponsável pela preparação dos dados: higienização e conformidade, para que os dados possam ser utilizados pelos modelos de aprendizado de máquina.
+Em Code/DataPrep existe o notebook [DataPreparation](../Code/DataPrep/DataPreparation.ipynb). Este notebook é reponsável pela preparação dos dados: higienização e conformidade, para que os dados possam ser utilizados pelos modelos de aprendizado de máquina.
 
 ## 5 - Modelagem
 
-Em Code/Model existe o notebook [DataModeling](./Code/Analysis/DataModeling.ipynb). Neste notebook são aplicadas técnicas de aprendizado de máquina como clusterização por k-nearest neighbor (KNN) e Fatorização por Matriz não negativa (NMF) de forma a classificar e entender quais são as entidades mais importantes. 
+Em Code/Model existe o notebook [DataModeling](../Code/Model/DataModeling.ipynb). Neste notebook são aplicadas técnicas de aprendizado de máquina como clusterização por k-nearest neighbor (KNN) e Fatorização por Matriz não negativa (NMF) de forma a classificar e entender quais são as entidades mais importantes. 
