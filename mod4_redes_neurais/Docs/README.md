@@ -16,6 +16,10 @@
 
 O objetivo do trabalho é treinar uma rede neural de forma que seja possível prever a quantidade de vento em uma determinada região do Nordeste do Brasil. A quantidade de vento gerado é diretamente proporcional a quantidade de geração de energia fornecida por geradores eólicos, daí a grande importância de um modelo de previsão acurado. 
 
+### Como funciona um gerador eólico
+
+[![Como funciona um gerador eólico](https://img.youtube.com/vi/V6lyCuw7VfU/0.jpg)](https://www.youtube.com/watch?v=V6lyCuw7VfU)
+
 Como usar:
 
 Todo o código foi desenvolvido em python em ambiente linux - Ubuntu vr. 20
