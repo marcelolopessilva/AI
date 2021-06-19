@@ -20,7 +20,12 @@ O objetivo do trabalho é treinar uma rede neural de forma que seja possível pr
 
 [![Como funciona um gerador eólico](https://img.youtube.com/vi/V6lyCuw7VfU/0.jpg)](https://www.youtube.com/watch?v=V6lyCuw7VfU)
 
+### Capacidade instalada no Brasil Junho 2021
+
+![Parque de Aracati](./capacidade_instalada_mw_jun2021.png)
+
 Como usar:
+
 
 Todo o código foi desenvolvido em python em ambiente linux - Ubuntu vr. 20
 
