@@ -1,0 +1,6 @@
+"Usina";"Longitude";"Latitude"
+"BAUET3_CAETITÉ_3";"-42.6";"-14.2"
+"CEUEFQ_FAÍSA_IV";"-39.2";"-3.4"
+"PEESV2_SERRA_DAS_VACAS_II";"-36.8";"-8.8"
+"PIEJ10_VENTOS_DE_SANTA_JOAN";"-40.8";"-7.4"
+"RNUEM3_MANGUE_SECO_3";"-36.4";"-5.2"
