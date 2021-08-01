@@ -1,0 +1,39 @@
+Planejamento Reconhecimento de Entidades MPO - TFS 28290
+
+- Montar Squad
+
+Recrutar recursos comunidade técnica de dados, ITI (Operação), AGS (GP), PDP e OSN (Adel)(Usuário), RSO (PO, SM)
+
+- CRISP-DM (1)
+
+Entendimento do Negócio. Reconhecimento de entidades em fragmentos de procedimentos para manobra de equipamentos executadas pelos operadores do tempo real. O objetivo final é auxiliar o operador validando automaticamente o que for possível dos procedimentos para manobra. Ex.: Inequações de limite de tensão. 
+
+- CRISP-DM (2)
+
+Entendimento dos Dados. Realizar análise exploratória dos dados.
+
+- CRISP-DM (3)
+
+Preparação dos Dados. Preparar os dados para modelagem.
+ 
+- C0RISP-DM (4)
+
+Modelagem. Modelar algorítmos estatísticos: classicos e de deep learning para o reconhecimento de entidades.
+
+- CRISP-DM (5)
+
+Geração de métricas e conclusão.
+
+- CRISP-DM (6)
+
+Operacionalização. Industrialização do modelo treinado em forma de serviço.
+
+Simulador de Mapa de Ações
+
+- Criar de/para entre regras de negócio com entidades e ações no REGER/PI 
+
+Simulador de tela SAGE
+
+- Criar tela com resultado das simulações do Mapa de Ações
+
+ 

@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+jupyter = "*"
+xlrd = "*"
+openpyxl = "*"
+fastparquet = "*"
+python-snappy = "*"
+pyarrow = "*"
+nltk = "*"
+sklearn = "*"
+spacy = "*"
+matplotlib = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
