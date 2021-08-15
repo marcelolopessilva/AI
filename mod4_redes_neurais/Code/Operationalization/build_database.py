@@ -22,13 +22,13 @@ if os.path.exists('prev_ventos.db'):
 db.create_all()
 
 # Popula o database com os dados dummy
-for previsao in PREVISAO:
-    p = Previsao(magnitude_verificada=previsao['magnitude_verificada'], 
-                magnitude_l_1=previsao['magnitude_l_1'], magnitude_l_2=previsao['magnitude_l_2'], magnitude_l_3=previsao['magnitude_l_3'],
-                temperatura_l_1=previsao['temperatura_l_1'], temperatura_l_2=previsao['temperatura_l_2'], temperatura_l_3=previsao['temperatura_l_3'],
-                direcao_l_1=previsao['direcao_l_1'], direcao_l_2=previsao['direcao_l_2'], direcao_l_3=previsao['direcao_l_3'],
-                pressao_l_1=previsao['pressao_l_1'], pressao_l_2=previsao['pressao_l_2'], pressao_l_3=previsao['pressao_l_3'],
-                magnitude_d_1=previsao['magnitude_d_1'])
-    db.session.add(p)
+#for previsao in PREVISAO:
+#    p = Previsao(magnitude_verificada=previsao['magnitude_verificada'], 
+#                magnitude_l_1=previsao['magnitude_l_1'], magnitude_l_2=previsao['magnitude_l_2'], magnitude_l_3=previsao['magnitude_l_3'],
+#                temperatura_l_1=previsao['temperatura_l_1'], temperatura_l_2=previsao['temperatura_l_2'], temperatura_l_3=previsao['temperatura_l_3'],
+#                direcao_l_1=previsao['direcao_l_1'], direcao_l_2=previsao['direcao_l_2'], direcao_l_3=previsao['direcao_l_3'],
+#                pressao_l_1=previsao['pressao_l_1'], pressao_l_2=previsao['pressao_l_2'], pressao_l_3=previsao['pressao_l_3'],
+#                magnitude_d_1=previsao['magnitude_d_1'])
+#    db.session.add(p)
 
 db.session.commit()

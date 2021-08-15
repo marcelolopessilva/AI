@@ -11,7 +11,7 @@
     <h1 class="display-5">Previsões de Vento - Nordeste</h1>
     <div class="container-fluid">
         {% if previsoes|length < 1 %}
-            <h4 style="text-align: center">Não há previsões na base de dados. Utilize o endpoint de criação /api/previsao</h4>
+            <h4 style="text-align: center" class="position-absolute top-50 start-50 translate-middle">Não há previsões na base de dados. Utilize o endpoint de criação /api/previsao</h4>
         {% else %}
             <table id="tabprev" class="table table-bordered table-striped text-center">
                 <thead class="table-dark">
