@@ -9,6 +9,7 @@ geopandas = "*"
 scipy = "*"
 seaborn = "*"
 sklearn = "*"
+marshmallow = "*"
 
 [dev-packages]
 

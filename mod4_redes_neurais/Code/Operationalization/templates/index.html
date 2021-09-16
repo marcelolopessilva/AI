@@ -1,0 +1,70 @@
+<!-- Herda script html base -->
+{% extends 'base.html'%}
+
+<!-- Substitui bloco head no base html -->
+{% block head %} 
+    <title>Previsor de Ventos - NE</title>
+{% endblock%}
+
+<!-- Substitui bloco body no base html -->
+{% block body %} 
+    <h1 class="display-5">Previsões de Vento - Nordeste</h1>
+    <div class="container-fluid">
+        {% if previsoes|length < 1 %}
+            <h4 style="text-align: center" class="position-absolute top-50 start-50 translate-middle">Não há previsões na base de dados. Utilize o endpoint de criação /api/previsao</h4>
+        {% else %}
+            <table id="tabprev" class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Data da Execução</th>
+                        <th>Magnitude Verificada</th>
+                        <th>Magnitude D-1</th>
+                        <th>Magnitude D-2</th>
+                        <th>Magnitude D-3</th>
+                        <th>Temperatura D-1</th>
+                        <th>Temperatura D-2</th>
+                        <th>Temperatura D-3</th>
+                        <th>Direção D-1</th>
+                        <th>Direção D-2</th>
+                        <th>Direção D-3</th>
+                        <th>Pressão D-1</th>
+                        <th>Pressão D-2</th>
+                        <th>Pressão D-3</th>
+                        <th>Magnitude D+1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for previsao in previsoes%}>
+                        <tr>
+                            <td>{{ previsao.data_execucao.strftime('%d/%m/%Y %H:%M:%S') }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_verificada) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_2) }}</td>    
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_2) }}</td>   
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_2) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_2) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_d_1) }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock%}
+
+{% block scripts %}
+<script>
+  $(document).ready(function () {
+    $('#tabprev').DataTable({
+        "order": [[ 1, "desc" ]]
+    });
+  });
+</script>
+{% endblock %}    

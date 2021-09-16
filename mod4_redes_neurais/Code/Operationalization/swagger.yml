@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  description: Documentação dos endpoints para a WebAPI de previsão dos ventos - Nordeste
+  version: "1.0.0"
+  title: Swagger Rest Previsão Ventos - NE
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /previsao:
+      post:
+        operationId: previsao.criar
+        tags:
+          - Previsao
+        summary: Cria uma previsão
+        description: Gera uma previsão de um dia a frente dadas informações de direção, magnitude, temperatura e pressão de 3 dias anteriores.
+        parameters:
+          - name: previsao
+            in: body
+            description: Previsão a ser criada
+            required: True
+            schema:
+              type: object
+              properties:
+                magnitude_verificada:
+                  type: number
+                  description: Magnitude do vento em m_s verificada do dia
+                magnitude_l_1:
+                  type: number
+                  description: Magnitude do vento em m_s do 1 dia anterior
+                magnitude_l_2:
+                  type: number
+                  description: Magnitude do vento em m_s do 2 dia anterior
+                magnitude_l_3:
+                  type: number
+                  description: Magnitude do vento em m_s do 3 dia anterior
+                temperatura_l_1:
+                  type: number
+                  description: Temperatura em Celsius do 1 dia anterior
+                temperatura_l_2:
+                  type: number
+                  description: Temperatura em Celsius do 2 dia anterior
+                temperatura_l_3:
+                  type: number
+                  description: Temperatura em Celsius do 3 dia anterior
+                direcao_l_1:
+                  type: number
+                  description: Direção em graus do 1 dia anterior
+                direcao_l_2:
+                  type: number
+                  description: Direção em grausdo 2 dia anterior
+                direcao_l_3:
+                  type: number
+                  description: Direção em graus do 3 dia anterior
+                pressao_l_1:
+                  type: number
+                  description: Pressão Atmosférica em MPa do 1 dia anterior
+                pressao_l_2:
+                  type: number
+                  description: Pressão Atmosférica em MPa do 2 dia anterior
+                pressao_l_3:
+                  type: number
+                  description: Pressão Atmosférica em MPa do 3 dia anterior  
+        responses:
+          201:
+            description: Previsão gerada e armazenada com sucesso
+            schema:
+              properties:
+                previsao_id:
+                  type: string
+                  description: Id of the previsão
+                data_execucao:
+                  type: string
+                  description: Data da previsão gerada
+                magnitude_d_1:
+                  type: number
+                  description: Valor previsto para o próximo dia
