@@ -9,6 +9,8 @@ flask = "*"
 flask-sqlalchemy = "*"
 marshmallow-sqlalchemy = "*"
 werkzeug = "*"
+statsmodels = "*"
+matplotlib = "*"
 
 [dev-packages]
 
