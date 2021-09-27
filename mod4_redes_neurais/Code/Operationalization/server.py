@@ -3,6 +3,9 @@ from flask import render_template
 from sqlalchemy import desc
 import config
 
+
+
+
 app = config.connex_app
 
 # Lê arquivo swagger.yml para configurar os endpoints da api
@@ -20,4 +23,4 @@ def index():
     return render_template('index.html', previsoes=previsoes)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
