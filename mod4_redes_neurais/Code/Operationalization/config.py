@@ -2,6 +2,7 @@ import os
 import connexion
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema, auto_field
+from keras.models import load_model
 
 '''
 EndPoints
@@ -25,3 +26,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Cria a instância db do SQLAlchemy
 db = SQLAlchemy(app)
+
+# importa modelo de rede neural
+nn_model_file = './nn_model'
+
+# ** IMPORTACAO DO MODELO
+nn_model = load_model(nn_model_file)

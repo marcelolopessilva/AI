@@ -11,26 +11,54 @@
     <h1 class="display-5">Previsões de Vento - Nordeste</h1>
     <div class="container-fluid">
         {% if previsoes|length < 1 %}
-            <h4 style="text-align: center" class="position-absolute top-50 start-50 translate-middle">Não há previsões na base de dados. Utilize o endpoint de criação /api/previsao</h4>
+            <h4 style="text-align: center" class="position-absolute top-50 start-50 translate-middle">Não há previsões na base de dados. Utilize o endpoint de criação /api/previsao ou veja a documentação em /api/ui</h4>
         {% else %}
             <table id="tabprev" class="table table-bordered table-striped text-center">
                 <thead class="table-dark">
                     <tr>
                         <th>Data da Execução</th>
                         <th>Magnitude Verificada</th>
-                        <th>Magnitude D-1</th>
-                        <th>Magnitude D-2</th>
-                        <th>Magnitude D-3</th>
-                        <th>Temperatura D-1</th>
-                        <th>Temperatura D-2</th>
-                        <th>Temperatura D-3</th>
-                        <th>Direção D-1</th>
-                        <th>Direção D-2</th>
-                        <th>Direção D-3</th>
-                        <th>Pressão D-1</th>
-                        <th>Pressão D-2</th>
-                        <th>Pressão D-3</th>
-                        <th>Magnitude D+1</th>
+                        <th>Magnitude Prevista H+1</th>
+                        <!-- <th>Magnitude H-1</th>
+                        <th>Magnitude H-2</th>
+                        <th>Magnitude H-3</th>
+                        <th>Magnitude H-4</th>
+                        <th>Magnitude H-5</th>
+                        <th>Magnitude H-6</th>
+                        <th>Magnitude H-7</th>
+
+                        <th>Chuva H-1</th>
+                        <th>Chuva H-2</th>
+                        <th>Chuva H-3</th>
+                        <th>Chuva H-4</th>
+                        <th>Chuva H-5</th>
+                        <th>Chuva H-6</th>
+                        <th>Chuva H-7</th>
+                        
+                        <th>Direção H-1</th>
+                        <th>Direção H-2</th>
+                        <th>Direção H-3</th>
+                        <th>Direção H-4</th>
+                        <th>Direção H-5</th>
+                        <th>Direção H-6</th>
+                        <th>Direção H-7</th>
+
+                        <th>Pressão H-1</th>
+                        <th>Pressão H-2</th>
+                        <th>Pressão H-3</th>
+                        <th>Pressão H-4</th>
+                        <th>Pressão H-5</th>
+                        <th>Pressão H-6</th>
+                        <th>Pressão H-7</th>
+
+                        <th>Temperatura H-1</th>
+                        <th>Temperatura H-2</th>
+                        <th>Temperatura H-3</th>
+                        <th>Temperatura H-4</th>
+                        <th>Temperatura H-5</th>
+                        <th>Temperatura H-6</th>
+                        <th>Temperatura H-7</th> -->
+                
                     </tr>
                 </thead>
                 <tbody>
@@ -38,19 +66,48 @@
                         <tr>
                             <td>{{ previsao.data_execucao.strftime('%d/%m/%Y %H:%M:%S') }}</td>
                             <td>{{ "%.2f"|format(previsao.magnitude_verificada) }}</td>
-                            <td>{{ "%.2f"|format(previsao.magnitude_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_d_1) }}</td>
+                            <!-- <td>{{ "%.2f"|format(previsao.magnitude_l_1) }}</td>
                             <td>{{ "%.2f"|format(previsao.magnitude_l_2) }}</td>    
                             <td>{{ "%.2f"|format(previsao.magnitude_l_3) }}</td>
-                            <td>{{ "%.2f"|format(previsao.temperatura_l_1) }}</td>
-                            <td>{{ "%.2f"|format(previsao.temperatura_l_2) }}</td>   
-                            <td>{{ "%.2f"|format(previsao.temperatura_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_4) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_5) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_6) }}</td>
+                            <td>{{ "%.2f"|format(previsao.magnitude_l_7) }}</td>
+
+                            <td>{{ "%.2f"|format(previsao.chuva_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.chuva_l_2) }}</td>    
+                            <td>{{ "%.2f"|format(previsao.chuva_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.chuva_l_4) }}</td>
+                            <td>{{ "%.2f"|format(previsao.chuva_l_5) }}</td>
+                            <td>{{ "%.2f"|format(previsao.chuva_l_6) }}</td>
+                            <td>{{ "%.2f"|format(previsao.chuva_l_7) }}</td>
+
                             <td>{{ "%.2f"|format(previsao.direcao_l_1) }}</td>
                             <td>{{ "%.2f"|format(previsao.direcao_l_2) }}</td>
                             <td>{{ "%.2f"|format(previsao.direcao_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_4) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_5) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_6) }}</td>
+                            <td>{{ "%.2f"|format(previsao.direcao_l_7) }}</td>
+
                             <td>{{ "%.2f"|format(previsao.pressao_l_1) }}</td>
                             <td>{{ "%.2f"|format(previsao.pressao_l_2) }}</td>
                             <td>{{ "%.2f"|format(previsao.pressao_l_3) }}</td>
-                            <td>{{ "%.2f"|format(previsao.magnitude_d_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_4) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_5) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_6) }}</td>
+                            <td>{{ "%.2f"|format(previsao.pressao_l_7) }}</td>
+
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_1) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_2) }}</td>   
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_3) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_4) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_5) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_6) }}</td>
+                            <td>{{ "%.2f"|format(previsao.temperatura_l_7) }}</td> -->
+
+
                         </tr>
                     {% endfor %}
                 </tbody>

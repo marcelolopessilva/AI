@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   description: Documentação dos endpoints para a WebAPI de previsão dos ventos - Nordeste
-  version: "1.0.0"
+  version: "2.0.0"
   title: Swagger Rest Previsão Ventos - NE
 consumes:
   - application/json
@@ -18,7 +18,7 @@ paths:
         tags:
           - Previsao
         summary: Cria uma previsão
-        description: Gera uma previsão de um dia a frente dadas informações de direção, magnitude, temperatura e pressão de 3 dias anteriores.
+        description: Gera uma previsão de uma hora a frente dadas informações de magnitude, chuva, direção, pressão e temperatura e pressão de 7 horas anteriores.
         parameters:
           - name: previsao
             in: body
@@ -29,43 +29,113 @@ paths:
               properties:
                 magnitude_verificada:
                   type: number
-                  description: Magnitude do vento em m_s verificada do dia
+                  description: Magnitude do vento em m_s verificada da hora anterior
                 magnitude_l_1:
                   type: number
-                  description: Magnitude do vento em m_s do 1 dia anterior
+                  description: Magnitude do vento em m_s da 1a hora anterior
                 magnitude_l_2:
                   type: number
-                  description: Magnitude do vento em m_s do 2 dia anterior
+                  description: Magnitude do vento em m_s da 2a hora anterior
                 magnitude_l_3:
                   type: number
-                  description: Magnitude do vento em m_s do 3 dia anterior
-                temperatura_l_1:
+                  description: Magnitude do vento em m_s da 3a hora anterior
+                magnitude_l_4:
                   type: number
-                  description: Temperatura em Celsius do 1 dia anterior
-                temperatura_l_2:
+                  description: Magnitude do vento em m_s da 4a hora anterior
+                magnitude_l_5:
                   type: number
-                  description: Temperatura em Celsius do 2 dia anterior
-                temperatura_l_3:
+                  description: Magnitude do vento em m_s da 5a hora anterior                  
+                magnitude_l_6:
                   type: number
-                  description: Temperatura em Celsius do 3 dia anterior
+                  description: Magnitude do vento em m_s da 6a hora anterior
+                magnitude_l_7:
+                  type: number
+                  description: Magnitude do vento em m_s da 7a hora anterior
+
+                chuva_l_1:
+                  type: number
+                  description: Chuva em mm_3 da 1a hora anterior
+                chuva_l_2:
+                  type: number
+                  description: Chuva em mm_3 da 2a hora anterior
+                chuva_l_3:
+                  type: number
+                  description: Chuva em mm_3 da 3a hora anterior
+                chuva_l_4:
+                  type: number
+                  description: Chuva em mm_3 da 4a hora anterior
+                chuva_l_5:
+                  type: number
+                  description: Chuva em mm_3 da 5a hora anterior                  
+                chuva_l_6:
+                  type: number
+                  description: Chuva em mm_3 da 6a hora anterior
+                chuva_l_7:
+                  type: number
+                  description: Chuva em mm_3 da 7a hora anterior  
                 direcao_l_1:
                   type: number
-                  description: Direção em graus do 1 dia anterior
+                  description: Direção em graus da 1a hora anterior
                 direcao_l_2:
                   type: number
-                  description: Direção em grausdo 2 dia anterior
+                  description: Direção em grausda 2a hora anterior
                 direcao_l_3:
                   type: number
-                  description: Direção em graus do 3 dia anterior
+                  description: Direção em graus da 3a hora anterior                
+                direcao_l_4:
+                  type: number
+                  description: Direção em graus da 4a hora anterior                
+                direcao_l_5:
+                  type: number
+                  description: Direção em graus da 5a hora anterior                
+                direcao_l_6:
+                  type: number
+                  description: Direção em graus da 6a hora anterior                
+                direcao_l_7:
+                  type: number
+                  description: Direção em graus da 7a hora anterior                
                 pressao_l_1:
                   type: number
-                  description: Pressão Atmosférica em MPa do 1 dia anterior
+                  description: Pressão Atmosférica em MPa da 1a hora anterior
                 pressao_l_2:
                   type: number
-                  description: Pressão Atmosférica em MPa do 2 dia anterior
+                  description: Pressão Atmosférica em MPa da 2a hora anterior
                 pressao_l_3:
                   type: number
-                  description: Pressão Atmosférica em MPa do 3 dia anterior  
+                  description: Pressão Atmosférica em MPa da 3a hora anterior                  
+                pressao_l_4:
+                  type: number
+                  description: Pressão Atmosférica em MPa da 4a hora anterior 
+                pressao_l_5:
+                  type: number
+                  description: Pressão Atmosférica em MPa da 5a hora anterior 
+                pressao_l_6:
+                  type: number
+                  description: Pressão Atmosférica em MPa da 6a hora anterior 
+                pressao_l_7:
+                  type: number
+                  description: Pressão Atmosférica em MPa da 7a hora anterior                                                                       
+                temperatura_l_1:
+                  type: number
+                  description: Temperatura em Celsius da 1a hora anterior
+                temperatura_l_2:
+                  type: number
+                  description: Temperatura em Celsius da 2a hora anterior
+                temperatura_l_3:
+                  type: number
+                  description: Temperatura em Celsius da 3a hora anterior
+                temperatura_l_4:
+                  type: number
+                  description: Temperatura em Celsius da 4a hora anterior
+                temperatura_l_5:
+                  type: number
+                  description: Temperatura em Celsius da 5a hora anterior                  
+                temperatura_l_6:
+                  type: number
+                  description: Temperatura em Celsius da 6a hora anterior
+                temperatura_l_7:
+                  type: number
+                  description: Temperatura em Celsius da 7a hora anterior
         responses:
           201:
             description: Previsão gerada e armazenada com sucesso
@@ -73,10 +143,10 @@ paths:
               properties:
                 previsao_id:
                   type: string
-                  description: Id of the previsão
+                  description: Id of the previsão gerada
                 data_execucao:
                   type: string
                   description: Data da previsão gerada
                 magnitude_d_1:
                   type: number
-                  description: Valor previsto para o próximo dia
+                  description: Valor previsto pelo modelo para a próximo hora
