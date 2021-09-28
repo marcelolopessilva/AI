@@ -65,8 +65,8 @@
                     {% for previsao in previsoes%}>
                         <tr>
                             <td>{{ previsao.data_execucao.strftime('%d/%m/%Y %H:%M:%S') }}</td>
-                            <td>{{ "%.2f"|format(previsao.magnitude_verificada) }}</td>
-                            <td>{{ "%.2f"|format(previsao.magnitude_d_1) }}</td>
+                            <td>{{ "%.3f"|format(previsao.magnitude_verificada) }}</td>
+                            <td>{{ "%.3f"|format(previsao.magnitude_d_1) }}</td>
                             <!-- <td>{{ "%.2f"|format(previsao.magnitude_l_1) }}</td>
                             <td>{{ "%.2f"|format(previsao.magnitude_l_2) }}</td>    
                             <td>{{ "%.2f"|format(previsao.magnitude_l_3) }}</td>

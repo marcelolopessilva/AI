@@ -3,6 +3,7 @@ import connexion
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema, auto_field
 from keras.models import load_model
+import pickle
 
 '''
 EndPoints
@@ -32,3 +33,20 @@ nn_model_file = './nn_model'
 
 # ** IMPORTACAO DO MODELO
 nn_model = load_model(nn_model_file)
+
+#  print(pickle.format_version)  
+#  : Versão 4.0
+
+# IMPORTA X_SCALER, Y_SCALER utilizadas no treino do modelo
+X_scaler_pkl = './nn_model/ScalerX_previsao.jbl'
+
+with open(X_scaler_pkl, 'rb') as fid:
+  x_scaler = pickle.load(fid)
+
+Y_scaler_pkl = './nn_model/ScalerY_previsao.jbl'
+
+with open(Y_scaler_pkl, 'rb') as fid:
+  y_scaler = pickle.load(fid)
+
+
+#variavelScalizada = scaler_models[Array_Entrada]
