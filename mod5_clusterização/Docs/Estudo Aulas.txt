@@ -1,0 +1,74 @@
+Clasificação não supervisionada
+
+- Pode demostrar características que não poderiam ser encontradas com as features já conhecidas
+
+- Características: Homogeneidade (coesão interna), Heterogeneidade (separação entre grupos), necessidade de formalizar matematicamente.
+
+Clusterização
+
+Agrupar um conjunto de dados em partições o mais similares possíveis. similar = parecido e não igual
+
+similaridade aumenta se objetos são mais parecidos. Geralmente entre 0 e 1
+
+distância aumenta se os objetos são menos parecidos. Sempre maior que 0.
+
+Tipos de distância; Euclidiana, Manhatan, cosseno, Chebyshev, Mahalanobis e Minkowski
+
+Medidas de distância - Cada uma assume que os objetos são descritos por atributos de uma determinada natureza:
+
+Qualitativos: nominais {M,F} = {0,1}, {Solteiro, Casado} = {1,2} ou ordinais {ruim, médio, bom} = {1,2,3} -> a escala do número tem importância. 
+
+Escalas Quantitativas
+
+intervalar - interpretação depende da unidade de medida. Ex.: Temperatura: 26C = 78F não é duas vezes mais quentes do que 13C = 55F
+
+razão - interpretação não depende de qualquer unidade. Ex.: 2x salário. Indica 2x o poder de compra não importa a moeda
+
+Para o cálculo da distância euclidiana números muito grandes com grandes variações podem dominar o cálculo. Pela fórmula eleva ao quadrado e depois retira a raiz. Para diminuir essa dominância aplicamos a normalização (o quanto um valor é importante para aquele atributo sendo normalizado)
+
+Geralmente normalizam-se as colunas (atributos) que tem valores mais distantes das outras. Tem que se ter cuidado com a normaização de atributos que tenham escalas diferentes. Não devem ser normalizadas juntas. 
+
+Os algoritmos de clusterização calculam a distância de cada vetor elemento a elemento entre todos os vetores. Os cálculos são guardados numa matriz de dissimilaridade ou procimidade. 
+
+K-Medias (K-Means) - Clusterização particional
+
+Pontos = conjuntos de dados
+Clusters = grupos com as mesmas características
+Centróide = centro de cada cluster/grupo
+
+Como definir k? Observar o somatório das distâncias de cada ponto ao centróide mais perto e usar o K a partir do qual a diferença é pequena. Método do cutovelo (Dist x #K)
+
+
+PYTHON - Uso de dict para mapear valores para dataframe
+
+gerar o dict = dictXPTO = { 0: 'nome1', 1: 'nome2' }
+
+realizar apply no df : df['coluna'] = df['coluna'].apply(lambda x: dictXPTO.get(x))
+
+x tem que mapear com valores das colunas
+
+ou fazer um map: df['coluna'] = df['coluna'].map(dictXPTO)
+
+Existe função no pandas que faz a mesma coisa: pd.categorical.from_codes(target, names) onde target é um valor e names são os nomes que se quer mapear
+
+Como gerar gráfico elbow
+
+dist = []
+for i in range(1,10):
+	kmeans = KMeans(n_clusters=i)
+	kmeans.fit(df)
+	dist.append(kmeans.inertia_)
+
+dist = somatório das distâncias dos centróides
+
+plt.plot(range(1,10), dist)
+plt.xlabel('numero de clusters')
+plt.ylabel('inertia')
+plt.show()
+
+
+Transformação de categóricas:
+
+label encode: Transformo diretamente os labels em valores. Ex.: {'Homem':0, 'Mulher':1}. Pode usar o LabelEncoder do preprocessing do sklearn
+
+one hot encode: 
