@@ -71,4 +71,18 @@ Transformação de categóricas:
 
 label encode: Transformo diretamente os labels em valores. Ex.: {'Homem':0, 'Mulher':1}. Pode usar o LabelEncoder do preprocessing do sklearn
 
-one hot encode: 
+one hot encode: Transforma os N - labels em N colunas. Para o conjunto somente uma tem valor 1, as outras todas 0. Isso impede que valores em sequencia ganhem pesos diferentes para o algoritmo (maiores distâncias). 
+
+Validação de Agrupamentos - Critérios que analisam de forma quantitativa e objetiva a qualidade dos clusters obtidos
+
+Índices de validade interna: analisam a estrutura de clusters sem uso de informação externa; Ex.: Método do cotovelo (melhor k)
+
+Índices de validade relativa: visam comparar diferentes partições, geralmente para identificar o número apropriado de clusters (diferentes algoritmos de clusterização (método da silhueta)
+
+índices de validade externa: medem o quanto a estrutura de cluster representa uma estrutura de organização previamente estabelecida. Nem sempre é possível de ser realizada (compara partição conseguida com partição de referência. Exige rotulação prévia. Cenários e experimentos controlados) Ex.: Adjusted Rand Index - ARI e Adjusted Mutual Information (AMI)
+
+PCA - Principal Component Analysis - método para reduzir o número de atributos de dados numéricos enquanto tenta preservar a estrutura do cluster.
+- Espera-se que depois da PCA tenhamos os mesmos clustes de antes do PCA
+- Identifica as direções de variação mais "importantes"
+- É mais fácil fazer cálculos no conjunto de dados após as reduções de dimensão.
+
