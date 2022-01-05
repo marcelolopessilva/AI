@@ -8,6 +8,9 @@ pandas = "*"
 numpy = "*"
 matplotlib = "*"
 seaborn = "*"
+sklearn = "*"
+plotly = "*"
+nbformat = "*"
 
 [dev-packages]
 
