@@ -55,6 +55,7 @@ Notes:
 9. **submetering3**: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
 <br />
 <br />
+
 # Como usar
 
 Todo o código foi desenvolvido em Python 3.10.1 em ambiente windows 11
