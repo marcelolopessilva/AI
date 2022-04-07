@@ -15,7 +15,7 @@ Tentar identificar assuntos em comum, ex.: tópicos, em textos do Diário Oficia
 O ONS seleciona de forma automática com o uso de IA, textos do DOU de interesse ao Operador. Essa seleção é feita por um classificador treinado de forma supervisionada e posteriormente são associados tópicos manualmente aos textos. Pode ser associado mais de um tópico por texto. A ideia inicial é identificar esse tópicos de forma não supervisionada e com a experiência adquirida partir para a criação de um identificador de tópicos para novos textos.
 
 ## Características do Data Set
-Textual, Sem dependência temporal.
+Textual, sem dependência temporal.
 
 ## Tarefas Associadas
 Clusterização não supervisionada, Processamento em Linguagem Natural
